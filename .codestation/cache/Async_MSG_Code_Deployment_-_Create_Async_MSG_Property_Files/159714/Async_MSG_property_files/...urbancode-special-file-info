@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<file-metadata>
+  <regular>
+    <path>AsyncMsg-MacysPP6.properties</path>
+    <permissions>
+      <unix>
+        <mode>0644</mode>
+        <user>mcywas</user>
+        <group>mcywas</group>
+      </unix>
+    </permissions>
+  </regular>
+  <regular>
+    <path>Overrides.tar.gz</path>
+    <permissions>
+      <unix>
+        <mode>0644</mode>
+        <user>mcywas</user>
+        <group>mcywas</group>
+      </unix>
+    </permissions>
+  </regular>
+  <regular>
+    <path>async-deployment-scripts-2.2.0-SNAPSHOT.tar.gz</path>
+    <permissions>
+      <unix>
+        <mode>0644</mode>
+        <user>mcywas</user>
+        <group>mcywas</group>
+      </unix>
+    </permissions>
+  </regular>
+</file-metadata>

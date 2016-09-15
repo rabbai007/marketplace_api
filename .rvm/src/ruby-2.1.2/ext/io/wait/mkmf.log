@@ -1,0 +1,54 @@
+"gcc -I../../../.ext/include/x86_64-linux -I../../.././include -I../../.././ext/io/wait     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC   -c conftest.c"
+conftest.c:6:3: error: #error 
+conftest.c:7: error: expected identifier or ‘(’ before ‘|’ token
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <ruby.h>
+4: /*top*/
+5: #ifndef DOSISH
+6: # error
+7: |:/ === DOSISH undefined === /:|
+8: #endif
+/* end */
+
+have_header: checking for sys/ioctl.h... -------------------- yes
+
+"gcc -E -I../../../.ext/include/x86_64-linux -I../../.././include -I../../.././ext/io/wait     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <sys/ioctl.h>
+/* end */
+
+--------------------
+
+have_macro: checking for FIONREAD in sys/ioctl.h,sys/ioctl.h... -------------------- yes
+
+"gcc -I../../../.ext/include/x86_64-linux -I../../.././include -I../../.././ext/io/wait     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC   -c conftest.c"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <sys/ioctl.h>
+4: #include <sys/ioctl.h>
+5: /*top*/
+6: #ifndef FIONREAD
+7: # error
+8: |:/ === FIONREAD undefined === /:|
+9: #endif
+/* end */
+
+--------------------
+
+extconf.h is:
+/* begin */
+1: #ifndef EXTCONF_H
+2: #define EXTCONF_H
+3: #define HAVE_SYS_IOCTL_H 1
+4: #define FIONREAD_HEADER <sys/ioctl.h>
+5: #endif
+/* end */
+

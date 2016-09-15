@@ -1,0 +1,3793 @@
+=== OpenSSL for Ruby configurator ===
+=== Checking for system dependent stuff... ===
+have_library: checking for t_open() in -lnsl... -------------------- no
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic     -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static -lnsl  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: error: ‘t_open’ undeclared (first use in this function)
+conftest.c:13: error: (Each undeclared identifier is reported only once
+conftest.c:13: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))t_open; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic     -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static -lnsl  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: warning: implicit declaration of function ‘t_open’
+/tmp/ccK6YodH.o: In function `t':
+/home/fsgapp/.rvm/src/ruby-2.1.2/ext/openssl/conftest.c:13: undefined reference to `t_open'
+collect2: ld returned 1 exit status
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { t_open(); return 0; }
+/* end */
+
+--------------------
+
+have_library: checking for socket() in -lsocket... -------------------- no
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic     -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static -lsocket  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: error: ‘socket’ undeclared (first use in this function)
+conftest.c:13: error: (Each undeclared identifier is reported only once
+conftest.c:13: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))socket; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic     -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static -lsocket  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: warning: implicit declaration of function ‘socket’
+/usr/bin/ld: cannot find -lsocket
+collect2: ld returned 1 exit status
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { socket(); return 0; }
+/* end */
+
+--------------------
+
+have_header: checking for assert.h... -------------------- yes
+
+"gcc -E -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <assert.h>
+/* end */
+
+--------------------
+
+=== Checking for required stuff... ===
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC conftest.c  -L. -L../.. -L/usr/kerberos/lib64 -lssl -lcrypto -ldl -lz     -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main() {return 0;}
+/* end */
+
+package configuration for openssl
+cflags: -I/usr/kerberos/include
+ldflags: -L/usr/kerberos/lib64
+libs: -lssl -lcrypto -ldl -lz
+
+have_header: checking for openssl/ssl.h... -------------------- yes
+
+"gcc -E -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <openssl/ssl.h>
+/* end */
+
+--------------------
+
+have_header: checking for openssl/conf_api.h... -------------------- yes
+
+"gcc -E -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <openssl/conf_api.h>
+/* end */
+
+--------------------
+
+have_func: checking for SSL_library_init() in openssl/ssl.h... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <openssl/ssl.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     printf("%p", &t);
+11:   }
+12: 
+13:   return 0;
+14: }
+15: int t(void) { SSL_library_init(); return 0; }
+/* end */
+
+--------------------
+
+have_header: checking for openssl/ssl.h... -------------------- yes
+
+"gcc -E -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <openssl/ssl.h>
+/* end */
+
+--------------------
+
+=== Checking for OpenSSL features... ===
+have_func: checking for ERR_peek_last_error()... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: error: ‘ERR_peek_last_error’ undeclared (first use in this function)
+conftest.c:13: error: (Each undeclared identifier is reported only once
+conftest.c:13: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))ERR_peek_last_error; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: warning: implicit declaration of function ‘ERR_peek_last_error’
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { ERR_peek_last_error(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for ASN1_put_eoc()... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: error: ‘ASN1_put_eoc’ undeclared (first use in this function)
+conftest.c:13: error: (Each undeclared identifier is reported only once
+conftest.c:13: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))ASN1_put_eoc; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: warning: implicit declaration of function ‘ASN1_put_eoc’
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { ASN1_put_eoc(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for BN_mod_add()... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: error: ‘BN_mod_add’ undeclared (first use in this function)
+conftest.c:13: error: (Each undeclared identifier is reported only once
+conftest.c:13: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))BN_mod_add; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: warning: implicit declaration of function ‘BN_mod_add’
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { BN_mod_add(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for BN_mod_sqr()... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: error: ‘BN_mod_sqr’ undeclared (first use in this function)
+conftest.c:13: error: (Each undeclared identifier is reported only once
+conftest.c:13: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))BN_mod_sqr; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: warning: implicit declaration of function ‘BN_mod_sqr’
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { BN_mod_sqr(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for BN_mod_sub()... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: error: ‘BN_mod_sub’ undeclared (first use in this function)
+conftest.c:13: error: (Each undeclared identifier is reported only once
+conftest.c:13: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))BN_mod_sub; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: warning: implicit declaration of function ‘BN_mod_sub’
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { BN_mod_sub(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for BN_pseudo_rand_range()... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: error: ‘BN_pseudo_rand_range’ undeclared (first use in this function)
+conftest.c:13: error: (Each undeclared identifier is reported only once
+conftest.c:13: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))BN_pseudo_rand_range; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: warning: implicit declaration of function ‘BN_pseudo_rand_range’
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { BN_pseudo_rand_range(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for BN_rand_range()... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: error: ‘BN_rand_range’ undeclared (first use in this function)
+conftest.c:13: error: (Each undeclared identifier is reported only once
+conftest.c:13: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))BN_rand_range; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: warning: implicit declaration of function ‘BN_rand_range’
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { BN_rand_range(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for CONF_get1_default_config_file()... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: error: ‘CONF_get1_default_config_file’ undeclared (first use in this function)
+conftest.c:13: error: (Each undeclared identifier is reported only once
+conftest.c:13: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))CONF_get1_default_config_file; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: warning: implicit declaration of function ‘CONF_get1_default_config_file’
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { CONF_get1_default_config_file(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for EVP_CIPHER_CTX_copy()... -------------------- no
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: error: ‘EVP_CIPHER_CTX_copy’ undeclared (first use in this function)
+conftest.c:13: error: (Each undeclared identifier is reported only once
+conftest.c:13: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))EVP_CIPHER_CTX_copy; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: warning: implicit declaration of function ‘EVP_CIPHER_CTX_copy’
+/tmp/ccQRM26A.o: In function `t':
+/home/fsgapp/.rvm/src/ruby-2.1.2/ext/openssl/conftest.c:13: undefined reference to `EVP_CIPHER_CTX_copy'
+collect2: ld returned 1 exit status
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { EVP_CIPHER_CTX_copy(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for EVP_CIPHER_CTX_set_padding()... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: error: ‘EVP_CIPHER_CTX_set_padding’ undeclared (first use in this function)
+conftest.c:13: error: (Each undeclared identifier is reported only once
+conftest.c:13: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))EVP_CIPHER_CTX_set_padding; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: warning: implicit declaration of function ‘EVP_CIPHER_CTX_set_padding’
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { EVP_CIPHER_CTX_set_padding(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for EVP_CipherFinal_ex()... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: error: ‘EVP_CipherFinal_ex’ undeclared (first use in this function)
+conftest.c:13: error: (Each undeclared identifier is reported only once
+conftest.c:13: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))EVP_CipherFinal_ex; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: warning: implicit declaration of function ‘EVP_CipherFinal_ex’
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { EVP_CipherFinal_ex(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for EVP_CipherInit_ex()... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: error: ‘EVP_CipherInit_ex’ undeclared (first use in this function)
+conftest.c:13: error: (Each undeclared identifier is reported only once
+conftest.c:13: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))EVP_CipherInit_ex; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: warning: implicit declaration of function ‘EVP_CipherInit_ex’
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { EVP_CipherInit_ex(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for EVP_DigestFinal_ex()... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: error: ‘EVP_DigestFinal_ex’ undeclared (first use in this function)
+conftest.c:13: error: (Each undeclared identifier is reported only once
+conftest.c:13: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))EVP_DigestFinal_ex; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: warning: implicit declaration of function ‘EVP_DigestFinal_ex’
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { EVP_DigestFinal_ex(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for EVP_DigestInit_ex()... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: error: ‘EVP_DigestInit_ex’ undeclared (first use in this function)
+conftest.c:13: error: (Each undeclared identifier is reported only once
+conftest.c:13: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))EVP_DigestInit_ex; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: warning: implicit declaration of function ‘EVP_DigestInit_ex’
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { EVP_DigestInit_ex(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for EVP_MD_CTX_cleanup()... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: error: ‘EVP_MD_CTX_cleanup’ undeclared (first use in this function)
+conftest.c:13: error: (Each undeclared identifier is reported only once
+conftest.c:13: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))EVP_MD_CTX_cleanup; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: warning: implicit declaration of function ‘EVP_MD_CTX_cleanup’
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { EVP_MD_CTX_cleanup(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for EVP_MD_CTX_create()... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: error: ‘EVP_MD_CTX_create’ undeclared (first use in this function)
+conftest.c:13: error: (Each undeclared identifier is reported only once
+conftest.c:13: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))EVP_MD_CTX_create; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: warning: implicit declaration of function ‘EVP_MD_CTX_create’
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { EVP_MD_CTX_create(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for EVP_MD_CTX_destroy()... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: error: ‘EVP_MD_CTX_destroy’ undeclared (first use in this function)
+conftest.c:13: error: (Each undeclared identifier is reported only once
+conftest.c:13: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))EVP_MD_CTX_destroy; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: warning: implicit declaration of function ‘EVP_MD_CTX_destroy’
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { EVP_MD_CTX_destroy(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for EVP_MD_CTX_init()... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: error: ‘EVP_MD_CTX_init’ undeclared (first use in this function)
+conftest.c:13: error: (Each undeclared identifier is reported only once
+conftest.c:13: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))EVP_MD_CTX_init; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: warning: implicit declaration of function ‘EVP_MD_CTX_init’
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { EVP_MD_CTX_init(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for HMAC_CTX_cleanup()... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: error: ‘HMAC_CTX_cleanup’ undeclared (first use in this function)
+conftest.c:13: error: (Each undeclared identifier is reported only once
+conftest.c:13: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))HMAC_CTX_cleanup; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: warning: implicit declaration of function ‘HMAC_CTX_cleanup’
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { HMAC_CTX_cleanup(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for HMAC_CTX_copy()... -------------------- no
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: error: ‘HMAC_CTX_copy’ undeclared (first use in this function)
+conftest.c:13: error: (Each undeclared identifier is reported only once
+conftest.c:13: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))HMAC_CTX_copy; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: warning: implicit declaration of function ‘HMAC_CTX_copy’
+/tmp/ccUzWsvo.o: In function `t':
+/home/fsgapp/.rvm/src/ruby-2.1.2/ext/openssl/conftest.c:13: undefined reference to `HMAC_CTX_copy'
+collect2: ld returned 1 exit status
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { HMAC_CTX_copy(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for HMAC_CTX_init()... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: error: ‘HMAC_CTX_init’ undeclared (first use in this function)
+conftest.c:13: error: (Each undeclared identifier is reported only once
+conftest.c:13: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))HMAC_CTX_init; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: warning: implicit declaration of function ‘HMAC_CTX_init’
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { HMAC_CTX_init(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for PEM_def_callback()... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: error: ‘PEM_def_callback’ undeclared (first use in this function)
+conftest.c:13: error: (Each undeclared identifier is reported only once
+conftest.c:13: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))PEM_def_callback; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: warning: implicit declaration of function ‘PEM_def_callback’
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { PEM_def_callback(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for PKCS5_PBKDF2_HMAC()... -------------------- no
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: error: ‘PKCS5_PBKDF2_HMAC’ undeclared (first use in this function)
+conftest.c:13: error: (Each undeclared identifier is reported only once
+conftest.c:13: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))PKCS5_PBKDF2_HMAC; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: warning: implicit declaration of function ‘PKCS5_PBKDF2_HMAC’
+/tmp/ccIRI0sg.o: In function `t':
+/home/fsgapp/.rvm/src/ruby-2.1.2/ext/openssl/conftest.c:13: undefined reference to `PKCS5_PBKDF2_HMAC'
+collect2: ld returned 1 exit status
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { PKCS5_PBKDF2_HMAC(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for PKCS5_PBKDF2_HMAC_SHA1()... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: error: ‘PKCS5_PBKDF2_HMAC_SHA1’ undeclared (first use in this function)
+conftest.c:13: error: (Each undeclared identifier is reported only once
+conftest.c:13: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))PKCS5_PBKDF2_HMAC_SHA1; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: warning: implicit declaration of function ‘PKCS5_PBKDF2_HMAC_SHA1’
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { PKCS5_PBKDF2_HMAC_SHA1(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for X509V3_set_nconf()... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: error: ‘X509V3_set_nconf’ undeclared (first use in this function)
+conftest.c:13: error: (Each undeclared identifier is reported only once
+conftest.c:13: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))X509V3_set_nconf; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: warning: implicit declaration of function ‘X509V3_set_nconf’
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { X509V3_set_nconf(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for X509V3_EXT_nconf_nid()... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: error: ‘X509V3_EXT_nconf_nid’ undeclared (first use in this function)
+conftest.c:13: error: (Each undeclared identifier is reported only once
+conftest.c:13: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))X509V3_EXT_nconf_nid; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: warning: implicit declaration of function ‘X509V3_EXT_nconf_nid’
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { X509V3_EXT_nconf_nid(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for X509_CRL_add0_revoked()... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: error: ‘X509_CRL_add0_revoked’ undeclared (first use in this function)
+conftest.c:13: error: (Each undeclared identifier is reported only once
+conftest.c:13: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))X509_CRL_add0_revoked; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: warning: implicit declaration of function ‘X509_CRL_add0_revoked’
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { X509_CRL_add0_revoked(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for X509_CRL_set_issuer_name()... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: error: ‘X509_CRL_set_issuer_name’ undeclared (first use in this function)
+conftest.c:13: error: (Each undeclared identifier is reported only once
+conftest.c:13: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))X509_CRL_set_issuer_name; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: warning: implicit declaration of function ‘X509_CRL_set_issuer_name’
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { X509_CRL_set_issuer_name(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for X509_CRL_set_version()... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: error: ‘X509_CRL_set_version’ undeclared (first use in this function)
+conftest.c:13: error: (Each undeclared identifier is reported only once
+conftest.c:13: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))X509_CRL_set_version; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: warning: implicit declaration of function ‘X509_CRL_set_version’
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { X509_CRL_set_version(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for X509_CRL_sort()... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: error: ‘X509_CRL_sort’ undeclared (first use in this function)
+conftest.c:13: error: (Each undeclared identifier is reported only once
+conftest.c:13: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))X509_CRL_sort; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: warning: implicit declaration of function ‘X509_CRL_sort’
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { X509_CRL_sort(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for X509_NAME_hash_old()... -------------------- no
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: error: ‘X509_NAME_hash_old’ undeclared (first use in this function)
+conftest.c:13: error: (Each undeclared identifier is reported only once
+conftest.c:13: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))X509_NAME_hash_old; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: warning: implicit declaration of function ‘X509_NAME_hash_old’
+/tmp/ccC3hy3j.o: In function `t':
+/home/fsgapp/.rvm/src/ruby-2.1.2/ext/openssl/conftest.c:13: undefined reference to `X509_NAME_hash_old'
+collect2: ld returned 1 exit status
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { X509_NAME_hash_old(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for X509_STORE_get_ex_data()... -------------------- no
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: error: ‘X509_STORE_get_ex_data’ undeclared (first use in this function)
+conftest.c:13: error: (Each undeclared identifier is reported only once
+conftest.c:13: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))X509_STORE_get_ex_data; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: warning: implicit declaration of function ‘X509_STORE_get_ex_data’
+/tmp/cck8WhNq.o: In function `t':
+/home/fsgapp/.rvm/src/ruby-2.1.2/ext/openssl/conftest.c:13: undefined reference to `X509_STORE_get_ex_data'
+collect2: ld returned 1 exit status
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { X509_STORE_get_ex_data(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for X509_STORE_set_ex_data()... -------------------- no
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: error: ‘X509_STORE_set_ex_data’ undeclared (first use in this function)
+conftest.c:13: error: (Each undeclared identifier is reported only once
+conftest.c:13: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))X509_STORE_set_ex_data; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: warning: implicit declaration of function ‘X509_STORE_set_ex_data’
+/tmp/ccKycD0L.o: In function `t':
+/home/fsgapp/.rvm/src/ruby-2.1.2/ext/openssl/conftest.c:13: undefined reference to `X509_STORE_set_ex_data'
+collect2: ld returned 1 exit status
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { X509_STORE_set_ex_data(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for OBJ_NAME_do_all_sorted()... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: error: ‘OBJ_NAME_do_all_sorted’ undeclared (first use in this function)
+conftest.c:13: error: (Each undeclared identifier is reported only once
+conftest.c:13: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))OBJ_NAME_do_all_sorted; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: warning: implicit declaration of function ‘OBJ_NAME_do_all_sorted’
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { OBJ_NAME_do_all_sorted(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for SSL_SESSION_get_id()... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: error: ‘SSL_SESSION_get_id’ undeclared (first use in this function)
+conftest.c:13: error: (Each undeclared identifier is reported only once
+conftest.c:13: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))SSL_SESSION_get_id; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: warning: implicit declaration of function ‘SSL_SESSION_get_id’
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { SSL_SESSION_get_id(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for SSL_SESSION_cmp()... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: error: ‘SSL_SESSION_cmp’ undeclared (first use in this function)
+conftest.c:13: error: (Each undeclared identifier is reported only once
+conftest.c:13: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))SSL_SESSION_cmp; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: warning: implicit declaration of function ‘SSL_SESSION_cmp’
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { SSL_SESSION_cmp(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for OPENSSL_cleanse()... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: error: ‘OPENSSL_cleanse’ undeclared (first use in this function)
+conftest.c:13: error: (Each undeclared identifier is reported only once
+conftest.c:13: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))OPENSSL_cleanse; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: warning: implicit declaration of function ‘OPENSSL_cleanse’
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { OPENSSL_cleanse(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for SSLv2_method()... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: error: ‘SSLv2_method’ undeclared (first use in this function)
+conftest.c:13: error: (Each undeclared identifier is reported only once
+conftest.c:13: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))SSLv2_method; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: warning: implicit declaration of function ‘SSLv2_method’
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { SSLv2_method(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for SSLv2_server_method()... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: error: ‘SSLv2_server_method’ undeclared (first use in this function)
+conftest.c:13: error: (Each undeclared identifier is reported only once
+conftest.c:13: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))SSLv2_server_method; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: warning: implicit declaration of function ‘SSLv2_server_method’
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { SSLv2_server_method(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for SSLv2_client_method()... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: error: ‘SSLv2_client_method’ undeclared (first use in this function)
+conftest.c:13: error: (Each undeclared identifier is reported only once
+conftest.c:13: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))SSLv2_client_method; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: warning: implicit declaration of function ‘SSLv2_client_method’
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { SSLv2_client_method(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for TLSv1_1_method()... -------------------- no
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: error: ‘TLSv1_1_method’ undeclared (first use in this function)
+conftest.c:13: error: (Each undeclared identifier is reported only once
+conftest.c:13: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))TLSv1_1_method; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: warning: implicit declaration of function ‘TLSv1_1_method’
+/tmp/ccMqbBbe.o: In function `t':
+/home/fsgapp/.rvm/src/ruby-2.1.2/ext/openssl/conftest.c:13: undefined reference to `TLSv1_1_method'
+collect2: ld returned 1 exit status
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { TLSv1_1_method(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for TLSv1_1_server_method()... -------------------- no
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: error: ‘TLSv1_1_server_method’ undeclared (first use in this function)
+conftest.c:13: error: (Each undeclared identifier is reported only once
+conftest.c:13: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))TLSv1_1_server_method; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: warning: implicit declaration of function ‘TLSv1_1_server_method’
+/tmp/ccQhvSGx.o: In function `t':
+/home/fsgapp/.rvm/src/ruby-2.1.2/ext/openssl/conftest.c:13: undefined reference to `TLSv1_1_server_method'
+collect2: ld returned 1 exit status
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { TLSv1_1_server_method(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for TLSv1_1_client_method()... -------------------- no
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: error: ‘TLSv1_1_client_method’ undeclared (first use in this function)
+conftest.c:13: error: (Each undeclared identifier is reported only once
+conftest.c:13: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))TLSv1_1_client_method; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: warning: implicit declaration of function ‘TLSv1_1_client_method’
+/tmp/ccwgzlZV.o: In function `t':
+/home/fsgapp/.rvm/src/ruby-2.1.2/ext/openssl/conftest.c:13: undefined reference to `TLSv1_1_client_method'
+collect2: ld returned 1 exit status
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { TLSv1_1_client_method(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for TLSv1_2_method()... -------------------- no
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: error: ‘TLSv1_2_method’ undeclared (first use in this function)
+conftest.c:13: error: (Each undeclared identifier is reported only once
+conftest.c:13: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))TLSv1_2_method; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: warning: implicit declaration of function ‘TLSv1_2_method’
+/tmp/ccUPeXjh.o: In function `t':
+/home/fsgapp/.rvm/src/ruby-2.1.2/ext/openssl/conftest.c:13: undefined reference to `TLSv1_2_method'
+collect2: ld returned 1 exit status
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { TLSv1_2_method(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for TLSv1_2_server_method()... -------------------- no
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: error: ‘TLSv1_2_server_method’ undeclared (first use in this function)
+conftest.c:13: error: (Each undeclared identifier is reported only once
+conftest.c:13: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))TLSv1_2_server_method; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: warning: implicit declaration of function ‘TLSv1_2_server_method’
+/tmp/ccOkneZi.o: In function `t':
+/home/fsgapp/.rvm/src/ruby-2.1.2/ext/openssl/conftest.c:13: undefined reference to `TLSv1_2_server_method'
+collect2: ld returned 1 exit status
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { TLSv1_2_server_method(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for TLSv1_2_client_method()... -------------------- no
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: error: ‘TLSv1_2_client_method’ undeclared (first use in this function)
+conftest.c:13: error: (Each undeclared identifier is reported only once
+conftest.c:13: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))TLSv1_2_client_method; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: warning: implicit declaration of function ‘TLSv1_2_client_method’
+/tmp/cc6sZfJD.o: In function `t':
+/home/fsgapp/.rvm/src/ruby-2.1.2/ext/openssl/conftest.c:13: undefined reference to `TLSv1_2_client_method'
+collect2: ld returned 1 exit status
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { TLSv1_2_client_method(); return 0; }
+/* end */
+
+--------------------
+
+have_macro: checking for OPENSSL_NPN_NEGOTIATED in openssl/ssl.h... -------------------- no
+
+"gcc -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include   -c conftest.c"
+conftest.c:6:3: error: #error 
+conftest.c:7: error: expected identifier or ‘(’ before ‘|’ token
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <openssl/ssl.h>
+4: /*top*/
+5: #ifndef OPENSSL_NPN_NEGOTIATED
+6: # error
+7: |:/ === OPENSSL_NPN_NEGOTIATED undefined === /:|
+8: #endif
+/* end */
+
+--------------------
+
+have_func: checking for SSL_set_tlsext_host_name() in openssl/ssl.h... -------------------- no
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:15: error: ‘SSL_set_tlsext_host_name’ undeclared (first use in this function)
+conftest.c:15: error: (Each undeclared identifier is reported only once
+conftest.c:15: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <openssl/ssl.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     printf("%p", &t);
+11:   }
+12: 
+13:   return 0;
+14: }
+15: int t(void) { void ((*volatile p)()); p = (void ((*)()))SSL_set_tlsext_host_name; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:15: warning: implicit declaration of function ‘SSL_set_tlsext_host_name’
+/tmp/ccuw4sKs.o: In function `t':
+/home/fsgapp/.rvm/src/ruby-2.1.2/ext/openssl/conftest.c:15: undefined reference to `SSL_set_tlsext_host_name'
+collect2: ld returned 1 exit status
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <openssl/ssl.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     printf("%p", &t);
+11:   }
+12: 
+13:   return 0;
+14: }
+15: int t(void) { SSL_set_tlsext_host_name(); return 0; }
+/* end */
+
+--------------------
+
+have_macro: checking for SSL_set_tlsext_host_name in openssl/ssl.h... -------------------- no
+
+"gcc -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include   -c conftest.c"
+conftest.c:6:3: error: #error 
+conftest.c:7: error: expected identifier or ‘(’ before ‘|’ token
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <openssl/ssl.h>
+4: /*top*/
+5: #ifndef SSL_set_tlsext_host_name
+6: # error
+7: |:/ === SSL_set_tlsext_host_name undefined === /:|
+8: #endif
+/* end */
+
+--------------------
+
+have_header: checking for openssl/engine.h... -------------------- yes
+
+"gcc -E -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <openssl/engine.h>
+/* end */
+
+--------------------
+
+have_func: checking for ENGINE_add()... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: error: ‘ENGINE_add’ undeclared (first use in this function)
+conftest.c:13: error: (Each undeclared identifier is reported only once
+conftest.c:13: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))ENGINE_add; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: warning: implicit declaration of function ‘ENGINE_add’
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { ENGINE_add(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for ENGINE_load_builtin_engines()... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: error: ‘ENGINE_load_builtin_engines’ undeclared (first use in this function)
+conftest.c:13: error: (Each undeclared identifier is reported only once
+conftest.c:13: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))ENGINE_load_builtin_engines; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: warning: implicit declaration of function ‘ENGINE_load_builtin_engines’
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { ENGINE_load_builtin_engines(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for ENGINE_load_openbsd_dev_crypto()... -------------------- no
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: error: ‘ENGINE_load_openbsd_dev_crypto’ undeclared (first use in this function)
+conftest.c:13: error: (Each undeclared identifier is reported only once
+conftest.c:13: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))ENGINE_load_openbsd_dev_crypto; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: warning: implicit declaration of function ‘ENGINE_load_openbsd_dev_crypto’
+/tmp/ccaqcQAK.o: In function `t':
+/home/fsgapp/.rvm/src/ruby-2.1.2/ext/openssl/conftest.c:13: undefined reference to `ENGINE_load_openbsd_dev_crypto'
+collect2: ld returned 1 exit status
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { ENGINE_load_openbsd_dev_crypto(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for ENGINE_get_digest()... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: error: ‘ENGINE_get_digest’ undeclared (first use in this function)
+conftest.c:13: error: (Each undeclared identifier is reported only once
+conftest.c:13: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))ENGINE_get_digest; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: warning: implicit declaration of function ‘ENGINE_get_digest’
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { ENGINE_get_digest(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for ENGINE_get_cipher()... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: error: ‘ENGINE_get_cipher’ undeclared (first use in this function)
+conftest.c:13: error: (Each undeclared identifier is reported only once
+conftest.c:13: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))ENGINE_get_cipher; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: warning: implicit declaration of function ‘ENGINE_get_cipher’
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { ENGINE_get_cipher(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for ENGINE_cleanup()... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: error: ‘ENGINE_cleanup’ undeclared (first use in this function)
+conftest.c:13: error: (Each undeclared identifier is reported only once
+conftest.c:13: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))ENGINE_cleanup; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: warning: implicit declaration of function ‘ENGINE_cleanup’
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { ENGINE_cleanup(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for ENGINE_load_dynamic()... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: error: ‘ENGINE_load_dynamic’ undeclared (first use in this function)
+conftest.c:13: error: (Each undeclared identifier is reported only once
+conftest.c:13: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))ENGINE_load_dynamic; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: warning: implicit declaration of function ‘ENGINE_load_dynamic’
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { ENGINE_load_dynamic(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for ENGINE_load_4758cca()... -------------------- no
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: error: ‘ENGINE_load_4758cca’ undeclared (first use in this function)
+conftest.c:13: error: (Each undeclared identifier is reported only once
+conftest.c:13: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))ENGINE_load_4758cca; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: warning: implicit declaration of function ‘ENGINE_load_4758cca’
+/tmp/ccBpScmh.o: In function `t':
+/home/fsgapp/.rvm/src/ruby-2.1.2/ext/openssl/conftest.c:13: undefined reference to `ENGINE_load_4758cca'
+collect2: ld returned 1 exit status
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { ENGINE_load_4758cca(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for ENGINE_load_aep()... -------------------- no
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: error: ‘ENGINE_load_aep’ undeclared (first use in this function)
+conftest.c:13: error: (Each undeclared identifier is reported only once
+conftest.c:13: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))ENGINE_load_aep; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: warning: implicit declaration of function ‘ENGINE_load_aep’
+/tmp/ccCj1UMv.o: In function `t':
+/home/fsgapp/.rvm/src/ruby-2.1.2/ext/openssl/conftest.c:13: undefined reference to `ENGINE_load_aep'
+collect2: ld returned 1 exit status
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { ENGINE_load_aep(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for ENGINE_load_atalla()... -------------------- no
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: error: ‘ENGINE_load_atalla’ undeclared (first use in this function)
+conftest.c:13: error: (Each undeclared identifier is reported only once
+conftest.c:13: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))ENGINE_load_atalla; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: warning: implicit declaration of function ‘ENGINE_load_atalla’
+/tmp/cckxjxRT.o: In function `t':
+/home/fsgapp/.rvm/src/ruby-2.1.2/ext/openssl/conftest.c:13: undefined reference to `ENGINE_load_atalla'
+collect2: ld returned 1 exit status
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { ENGINE_load_atalla(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for ENGINE_load_chil()... -------------------- no
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: error: ‘ENGINE_load_chil’ undeclared (first use in this function)
+conftest.c:13: error: (Each undeclared identifier is reported only once
+conftest.c:13: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))ENGINE_load_chil; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: warning: implicit declaration of function ‘ENGINE_load_chil’
+/tmp/cciJQWid.o: In function `t':
+/home/fsgapp/.rvm/src/ruby-2.1.2/ext/openssl/conftest.c:13: undefined reference to `ENGINE_load_chil'
+collect2: ld returned 1 exit status
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { ENGINE_load_chil(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for ENGINE_load_cswift()... -------------------- no
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: error: ‘ENGINE_load_cswift’ undeclared (first use in this function)
+conftest.c:13: error: (Each undeclared identifier is reported only once
+conftest.c:13: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))ENGINE_load_cswift; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: warning: implicit declaration of function ‘ENGINE_load_cswift’
+/tmp/ccoNFRIy.o: In function `t':
+/home/fsgapp/.rvm/src/ruby-2.1.2/ext/openssl/conftest.c:13: undefined reference to `ENGINE_load_cswift'
+collect2: ld returned 1 exit status
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { ENGINE_load_cswift(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for ENGINE_load_nuron()... -------------------- no
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: error: ‘ENGINE_load_nuron’ undeclared (first use in this function)
+conftest.c:13: error: (Each undeclared identifier is reported only once
+conftest.c:13: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))ENGINE_load_nuron; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: warning: implicit declaration of function ‘ENGINE_load_nuron’
+/tmp/cce3mS1S.o: In function `t':
+/home/fsgapp/.rvm/src/ruby-2.1.2/ext/openssl/conftest.c:13: undefined reference to `ENGINE_load_nuron'
+collect2: ld returned 1 exit status
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { ENGINE_load_nuron(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for ENGINE_load_sureware()... -------------------- no
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: error: ‘ENGINE_load_sureware’ undeclared (first use in this function)
+conftest.c:13: error: (Each undeclared identifier is reported only once
+conftest.c:13: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))ENGINE_load_sureware; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: warning: implicit declaration of function ‘ENGINE_load_sureware’
+/tmp/ccekuuae.o: In function `t':
+/home/fsgapp/.rvm/src/ruby-2.1.2/ext/openssl/conftest.c:13: undefined reference to `ENGINE_load_sureware'
+collect2: ld returned 1 exit status
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { ENGINE_load_sureware(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for ENGINE_load_ubsec()... -------------------- no
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: error: ‘ENGINE_load_ubsec’ undeclared (first use in this function)
+conftest.c:13: error: (Each undeclared identifier is reported only once
+conftest.c:13: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))ENGINE_load_ubsec; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: warning: implicit declaration of function ‘ENGINE_load_ubsec’
+/tmp/cccvZEgm.o: In function `t':
+/home/fsgapp/.rvm/src/ruby-2.1.2/ext/openssl/conftest.c:13: undefined reference to `ENGINE_load_ubsec'
+collect2: ld returned 1 exit status
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { ENGINE_load_ubsec(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for ENGINE_load_padlock()... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: error: ‘ENGINE_load_padlock’ undeclared (first use in this function)
+conftest.c:13: error: (Each undeclared identifier is reported only once
+conftest.c:13: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))ENGINE_load_padlock; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: warning: implicit declaration of function ‘ENGINE_load_padlock’
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { ENGINE_load_padlock(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for ENGINE_load_capi()... -------------------- no
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: error: ‘ENGINE_load_capi’ undeclared (first use in this function)
+conftest.c:13: error: (Each undeclared identifier is reported only once
+conftest.c:13: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))ENGINE_load_capi; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: warning: implicit declaration of function ‘ENGINE_load_capi’
+/tmp/ccA5imf4.o: In function `t':
+/home/fsgapp/.rvm/src/ruby-2.1.2/ext/openssl/conftest.c:13: undefined reference to `ENGINE_load_capi'
+collect2: ld returned 1 exit status
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { ENGINE_load_capi(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for ENGINE_load_gmp()... -------------------- no
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: error: ‘ENGINE_load_gmp’ undeclared (first use in this function)
+conftest.c:13: error: (Each undeclared identifier is reported only once
+conftest.c:13: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))ENGINE_load_gmp; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: warning: implicit declaration of function ‘ENGINE_load_gmp’
+/tmp/cc07aKXo.o: In function `t':
+/home/fsgapp/.rvm/src/ruby-2.1.2/ext/openssl/conftest.c:13: undefined reference to `ENGINE_load_gmp'
+collect2: ld returned 1 exit status
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { ENGINE_load_gmp(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for ENGINE_load_gost()... -------------------- no
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: error: ‘ENGINE_load_gost’ undeclared (first use in this function)
+conftest.c:13: error: (Each undeclared identifier is reported only once
+conftest.c:13: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))ENGINE_load_gost; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: warning: implicit declaration of function ‘ENGINE_load_gost’
+/tmp/ccoLMIJJ.o: In function `t':
+/home/fsgapp/.rvm/src/ruby-2.1.2/ext/openssl/conftest.c:13: undefined reference to `ENGINE_load_gost'
+collect2: ld returned 1 exit status
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { ENGINE_load_gost(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for ENGINE_load_cryptodev()... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: error: ‘ENGINE_load_cryptodev’ undeclared (first use in this function)
+conftest.c:13: error: (Each undeclared identifier is reported only once
+conftest.c:13: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))ENGINE_load_cryptodev; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: warning: implicit declaration of function ‘ENGINE_load_cryptodev’
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { ENGINE_load_cryptodev(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for ENGINE_load_aesni()... -------------------- no
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: error: ‘ENGINE_load_aesni’ undeclared (first use in this function)
+conftest.c:13: error: (Each undeclared identifier is reported only once
+conftest.c:13: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))ENGINE_load_aesni; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: warning: implicit declaration of function ‘ENGINE_load_aesni’
+/tmp/ccDyvEtk.o: In function `t':
+/home/fsgapp/.rvm/src/ruby-2.1.2/ext/openssl/conftest.c:13: undefined reference to `ENGINE_load_aesni'
+collect2: ld returned 1 exit status
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { ENGINE_load_aesni(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for DH_generate_parameters_ex()... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: error: ‘DH_generate_parameters_ex’ undeclared (first use in this function)
+conftest.c:13: error: (Each undeclared identifier is reported only once
+conftest.c:13: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))DH_generate_parameters_ex; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: warning: implicit declaration of function ‘DH_generate_parameters_ex’
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { DH_generate_parameters_ex(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for DSA_generate_parameters_ex()... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: error: ‘DSA_generate_parameters_ex’ undeclared (first use in this function)
+conftest.c:13: error: (Each undeclared identifier is reported only once
+conftest.c:13: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))DSA_generate_parameters_ex; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: warning: implicit declaration of function ‘DSA_generate_parameters_ex’
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { DSA_generate_parameters_ex(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for RSA_generate_key_ex()... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: error: ‘RSA_generate_key_ex’ undeclared (first use in this function)
+conftest.c:13: error: (Each undeclared identifier is reported only once
+conftest.c:13: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))RSA_generate_key_ex; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: warning: implicit declaration of function ‘RSA_generate_key_ex’
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { RSA_generate_key_ex(); return 0; }
+/* end */
+
+--------------------
+
+checking for OpenSSL version is 0.9.7 or later... -------------------- yes
+
+"gcc -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include   -c conftest.c"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <openssl/opensslv.h>
+4: 
+5: /*top*/
+6: int conftest_const[(OPENSSL_VERSION_NUMBER >= 0x00907000L) ? 1 : -1];
+/* end */
+
+--------------------
+
+have_header: checking for openssl/ocsp.h... -------------------- yes
+
+"gcc -E -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <openssl/ocsp.h>
+/* end */
+
+--------------------
+
+have_struct_member: checking for CRYPTO_THREADID.ptr in openssl/crypto.h... -------------------- no
+
+"gcc -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include   -c conftest.c"
+conftest.c:6: error: ‘CRYPTO_THREADID’ undeclared here (not in a function)
+conftest.c:6: error: expected expression before ‘)’ token
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <openssl/crypto.h>
+ 4: 
+ 5: /*top*/
+ 6: int s = (char *)&((CRYPTO_THREADID*)0)->ptr - (char *)0;
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   return 0;
+10: }
+/* end */
+
+--------------------
+
+have_struct_member: checking for EVP_CIPHER_CTX.flags in openssl/evp.h... -------------------- yes
+
+"gcc -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include   -c conftest.c"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <openssl/evp.h>
+ 4: 
+ 5: /*top*/
+ 6: int s = (char *)&((EVP_CIPHER_CTX*)0)->flags - (char *)0;
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   return 0;
+10: }
+/* end */
+
+--------------------
+
+have_struct_member: checking for EVP_CIPHER_CTX.engine in openssl/evp.h... -------------------- yes
+
+"gcc -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include   -c conftest.c"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <openssl/evp.h>
+ 4: 
+ 5: /*top*/
+ 6: int s = (char *)&((EVP_CIPHER_CTX*)0)->engine - (char *)0;
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   return 0;
+10: }
+/* end */
+
+--------------------
+
+have_struct_member: checking for X509_ATTRIBUTE.single in openssl/x509.h... -------------------- yes
+
+"gcc -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include   -c conftest.c"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <openssl/x509.h>
+ 4: 
+ 5: /*top*/
+ 6: int s = (char *)&((X509_ATTRIBUTE*)0)->single - (char *)0;
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   return 0;
+10: }
+/* end */
+
+--------------------
+
+have_macro: checking for OPENSSL_FIPS in openssl/opensslconf.h... -------------------- yes
+
+"gcc -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include   -c conftest.c"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <openssl/opensslconf.h>
+4: /*top*/
+5: #ifndef OPENSSL_FIPS
+6: # error
+7: |:/ === OPENSSL_FIPS undefined === /:|
+8: #endif
+/* end */
+
+--------------------
+
+have_macro: checking for EVP_CTRL_GCM_GET_TAG in openssl/evp.h... -------------------- no
+
+"gcc -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/openssl     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include   -c conftest.c"
+conftest.c:6:3: error: #error 
+conftest.c:7: error: expected identifier or ‘(’ before ‘|’ token
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <openssl/evp.h>
+4: /*top*/
+5: #ifndef EVP_CTRL_GCM_GET_TAG
+6: # error
+7: |:/ === EVP_CTRL_GCM_GET_TAG undefined === /:|
+8: #endif
+/* end */
+
+--------------------
+
+=== Checking done. ===
+extconf.h is:
+/* begin */
+ 1: #ifndef EXTCONF_H
+ 2: #define EXTCONF_H
+ 3: #define HAVE_ASSERT_H 1
+ 4: #define HAVE_OPENSSL_SSL_H 1
+ 5: #define HAVE_OPENSSL_CONF_API_H 1
+ 6: #define HAVE_SSL_LIBRARY_INIT 1
+ 7: #define HAVE_OPENSSL_SSL_H 1
+ 8: #define HAVE_ERR_PEEK_LAST_ERROR 1
+ 9: #define HAVE_ASN1_PUT_EOC 1
+10: #define HAVE_BN_MOD_ADD 1
+11: #define HAVE_BN_MOD_SQR 1
+12: #define HAVE_BN_MOD_SUB 1
+13: #define HAVE_BN_PSEUDO_RAND_RANGE 1
+14: #define HAVE_BN_RAND_RANGE 1
+15: #define HAVE_CONF_GET1_DEFAULT_CONFIG_FILE 1
+16: #define HAVE_EVP_CIPHER_CTX_SET_PADDING 1
+17: #define HAVE_EVP_CIPHERFINAL_EX 1
+18: #define HAVE_EVP_CIPHERINIT_EX 1
+19: #define HAVE_EVP_DIGESTFINAL_EX 1
+20: #define HAVE_EVP_DIGESTINIT_EX 1
+21: #define HAVE_EVP_MD_CTX_CLEANUP 1
+22: #define HAVE_EVP_MD_CTX_CREATE 1
+23: #define HAVE_EVP_MD_CTX_DESTROY 1
+24: #define HAVE_EVP_MD_CTX_INIT 1
+25: #define HAVE_HMAC_CTX_CLEANUP 1
+26: #define HAVE_HMAC_CTX_INIT 1
+27: #define HAVE_PEM_DEF_CALLBACK 1
+28: #define HAVE_PKCS5_PBKDF2_HMAC_SHA1 1
+29: #define HAVE_X509V3_SET_NCONF 1
+30: #define HAVE_X509V3_EXT_NCONF_NID 1
+31: #define HAVE_X509_CRL_ADD0_REVOKED 1
+32: #define HAVE_X509_CRL_SET_ISSUER_NAME 1
+33: #define HAVE_X509_CRL_SET_VERSION 1
+34: #define HAVE_X509_CRL_SORT 1
+35: #define HAVE_OBJ_NAME_DO_ALL_SORTED 1
+36: #define HAVE_SSL_SESSION_GET_ID 1
+37: #define HAVE_SSL_SESSION_CMP 1
+38: #define HAVE_OPENSSL_CLEANSE 1
+39: #define HAVE_SSLV2_METHOD 1
+40: #define HAVE_SSLV2_SERVER_METHOD 1
+41: #define HAVE_SSLV2_CLIENT_METHOD 1
+42: #define HAVE_OPENSSL_ENGINE_H 1
+43: #define HAVE_ENGINE_ADD 1
+44: #define HAVE_ENGINE_LOAD_BUILTIN_ENGINES 1
+45: #define HAVE_ENGINE_GET_DIGEST 1
+46: #define HAVE_ENGINE_GET_CIPHER 1
+47: #define HAVE_ENGINE_CLEANUP 1
+48: #define HAVE_ENGINE_LOAD_DYNAMIC 1
+49: #define HAVE_ENGINE_LOAD_PADLOCK 1
+50: #define HAVE_ENGINE_LOAD_CRYPTODEV 1
+51: #define HAVE_DH_GENERATE_PARAMETERS_EX 1
+52: #define HAVE_DSA_GENERATE_PARAMETERS_EX 1
+53: #define HAVE_RSA_GENERATE_KEY_EX 1
+54: #define HAVE_OPENSSL_OCSP_H 1
+55: #define HAVE_EVP_CIPHER_CTX_FLAGS 1
+56: #define HAVE_ST_FLAGS 1
+57: #define HAVE_EVP_CIPHER_CTX_ENGINE 1
+58: #define HAVE_ST_ENGINE 1
+59: #define HAVE_X509_ATTRIBUTE_SINGLE 1
+60: #define HAVE_ST_SINGLE 1
+61: #define HAVE_OPENSSL_FIPS 1
+62: #endif
+/* end */
+
+Done.

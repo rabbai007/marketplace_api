@@ -1,0 +1,66 @@
+have_library: checking for gdbm_open() in -lgdbm... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/gdbm     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic     -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static -lgdbm  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: error: ‘gdbm_open’ undeclared (first use in this function)
+conftest.c:13: error: (Each undeclared identifier is reported only once
+conftest.c:13: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))gdbm_open; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/gdbm     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC conftest.c  -L. -L../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic     -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static -lgdbm  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:13: warning: implicit declaration of function ‘gdbm_open’
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { gdbm_open(); return 0; }
+/* end */
+
+--------------------
+
+have_header: checking for gdbm.h... -------------------- yes
+
+"gcc -E -I../../.ext/include/x86_64-linux -I../.././include -I../.././ext/gdbm     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <gdbm.h>
+/* end */
+
+--------------------
+
+extconf.h is:
+/* begin */
+1: #ifndef EXTCONF_H
+2: #define EXTCONF_H
+3: #define HAVE_GDBM_H 1
+4: #endif
+/* end */
+

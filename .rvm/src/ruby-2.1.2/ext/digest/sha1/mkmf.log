@@ -1,0 +1,94 @@
+"gcc -o conftest -I../../../.ext/include/x86_64-linux -I../../.././include -I../../.././ext/digest/sha1 -I../../.././ext/digest/sha1/..     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC conftest.c  -L. -L../../.. -L/usr/kerberos/lib64 -lssl -lcrypto -ldl -lz     -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main() {return 0;}
+/* end */
+
+package configuration for openssl
+cflags: -I/usr/kerberos/include
+ldflags: -L/usr/kerberos/lib64
+libs: -lssl -lcrypto -ldl -lz
+
+have_library: checking for main() in -lcrypto... -------------------- yes
+
+"gcc -o conftest -I../../../.ext/include/x86_64-linux -I../../.././include -I../../.././ext/digest/sha1 -I../../.././ext/digest/sha1/..     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64     -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static -lcrypto  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))main; return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for SHA1_Transform() in openssl/sha.h... -------------------- yes
+
+"gcc -o conftest -I../../../.ext/include/x86_64-linux -I../../.././include -I../../.././ext/digest/sha1 -I../../.././ext/digest/sha1/..     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include conftest.c  -L. -L../../.. -L. -fstack-protector -rdynamic -Wl,-export-dynamic -L/usr/kerberos/lib64    -lcrypto  -lssl -lcrypto -ldl -lz -Wl,-R -Wl,/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -L/home/fsgapp/.rvm/rubies/ruby-2.1.2/lib -lruby-static -lcrypto  -lssl -lcrypto -ldl -lz -lpthread -lrt -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <openssl/sha.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     printf("%p", &t);
+11:   }
+12: 
+13:   return 0;
+14: }
+15: int t(void) { void ((*volatile p)()); p = (void ((*)()))SHA1_Transform; return 0; }
+/* end */
+
+--------------------
+
+have_header: checking for openssl/sha.h... -------------------- yes
+
+"gcc -E -I../../../.ext/include/x86_64-linux -I../../.././include -I../../.././ext/digest/sha1 -I../../.././ext/digest/sha1/..     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <openssl/sha.h>
+/* end */
+
+--------------------
+
+have_header: checking for sys/cdefs.h... -------------------- yes
+
+"gcc -E -I../../../.ext/include/x86_64-linux -I../../.././include -I../../.././ext/digest/sha1 -I../../.././ext/digest/sha1/..     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -I/usr/kerberos/include  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <sys/cdefs.h>
+/* end */
+
+--------------------
+
+extconf.h is:
+/* begin */
+1: #ifndef EXTCONF_H
+2: #define EXTCONF_H
+3: #define HAVE_CONFIG_H 1
+4: #define HAVE_SHA1_TRANSFORM 1
+5: #define HAVE_OPENSSL_SHA_H 1
+6: #define HAVE_SYS_CDEFS_H 1
+7: #endif
+/* end */
+
